@@ -2,16 +2,14 @@
 #include <QApplication>
 #include <QLabel>
 #include <QImage>
-#include <opencv2/opencv.hpp>
+#include <QPushButton>
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    MainWindow w;
-    w.show();
+    QApplication app(argc, argv);
+    MainWindow window;
 
-    cv::Mat inputImage = cv::imread("/home/daniel/Downloads/test.png");
-    cv::imshow("Image", inputImage);
+    window.show();
 
-    return a.exec();
+    return app.exec();
 }
