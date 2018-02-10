@@ -1,8 +1,13 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <camworker.h>
 
+#include <QMainWindow>
+#include <QLabel>
+#include <QPixmap>
+#include <QMessageBox>
+#include <QThread>
 
 namespace Ui {
 class MainWindow;
@@ -15,10 +20,16 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void imgData();
 
 private slots:
    void buttonClickEvent();
+
+public slots:
+   void showData(QPixmap image);
+
+signals:
+    void finished();
+    void error(QString err);
 
 private:
     Ui::MainWindow *ui;

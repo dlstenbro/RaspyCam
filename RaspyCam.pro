@@ -29,12 +29,14 @@ LIBS += -L/usr/local/lib -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lope
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    camera.cpp
+        camera.cpp \
+        camworker.cpp
 
 HEADERS += \
         mainwindow.h \
         asmopencv.h \
-    camera.h
+        camera.h \
+        camworker.h
 
 FORMS += \
         mainwindow.ui

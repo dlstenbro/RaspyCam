@@ -9,26 +9,30 @@ Camera::Camera()
     {
         std::cout << "Could not load camera!" << std::endl;
     }
+
 }
 
 void Camera::startCapture()
 {
+
     cv::Mat frame;
-    this->cf = frame;
     this->cap >> frame;
+    //cv::imshow("feed", frame);
+    setFrame(frame);
 
-    //std::cout << "frame: " << this->frame << std::endl;
+}
 
+void Camera::setFrame(cv::Mat frame)
+{
+    this->cf = frame;
 }
 
 cv::Mat Camera::getFrame()
 {
     return this->cf;
-
 }
 
 void Camera::stopCapture()
 {
     this->cap.release();
-
 }

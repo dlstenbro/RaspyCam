@@ -2,9 +2,11 @@
 #define CAMERA_H
 
 #include <opencv2/opencv.hpp>
+#include <QObject>
 
 class Camera
 {
+
     public:
 
         // variables
@@ -21,9 +23,8 @@ class Camera
 
         // variables
 
-
         // functions
-
+        void setFrame(cv::Mat frame);
 };
 
 #endif // CAMERA_H
