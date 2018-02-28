@@ -20,6 +20,7 @@ void MainWindow::buttonClickEvent()
 {
 
     QString sigText = ((QPushButton*)sender())->text();
+
     QThread* thread = new QThread;
     CamWorker* worker = new CamWorker();
 
@@ -45,7 +46,9 @@ void MainWindow::buttonClickEvent()
             msgBox.setText("You clicked "+ ((QPushButton*)sender())->text());
             msgBox.exec();
         */
-        worker->stopWork();
+        ui->label_img->clear();
+        ui->label_img->close();
+
     }
 
 
